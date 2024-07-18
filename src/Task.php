@@ -46,4 +46,11 @@ class Task
         $stmt->bindParam(':status', $status, PDO::PARAM_BOOL);
         return $stmt->execute();
     }
+
+    public function delete(int $id): bool
+    {
+        $stmt = $this->pdo->prepare("DELETE FROM todos WHERE id = :id");
+        $stmt->bindParam(':id', $id);
+        return $stmt->execute();
+    }
 }

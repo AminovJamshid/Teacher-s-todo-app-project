@@ -16,6 +16,10 @@ if (count($_GET) > 0 || count($_POST) > 0) {
     if (isset($_GET['uncompleted'])) {
         $task->uncompleted($_GET['uncompleted']);
     }
+
+    if (isset($_GET['delete'])) {
+        $task->delete($_GET['delete']);
+    }
 }
 
 require 'view/home.php';
