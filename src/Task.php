@@ -2,10 +2,6 @@
 
 declare(strict_types=1);
 
-namespace Rustam\TodoApp;
-
-use PDO;
-
 class Task
 {
     private PDO $pdo;

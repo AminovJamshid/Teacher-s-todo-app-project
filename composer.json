@@ -1,18 +1,19 @@
 {
-    "name": "rustam/todo-app",
-    "description": "The best todo app ever",
-    "autoload": {
-        "psr-4": {
-            "Rustam\\TodoApp\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Rustam",
-            "email": "rustamergashev.sp@gmail.com"
-        }
-    ],
-    "require": {
-      "ext-pdo": "*"
+  "name": "rustam/todo-app",
+  "description": "The best todo app ever",
+  "autoload": {
+    "classmap": [
+      "."
+    ]
+  },
+  "authors": [
+    {
+      "name": "Rustam",
+      "email": "rustamergashev.sp@gmail.com"
     }
+  ],
+  "require": {
+    "ext-pdo": "*",
+    "guzzlehttp/guzzle": "^7.8"
+  }
 }

@@ -2,8 +2,17 @@
 
 require_once "vendor/autoload.php";
 
+date_default_timezone_set('Asia/Tashkent');
+
+$update = json_decode(file_get_contents('php://input'));
+
+if (isset($update)) {
+    require 'bot/bot.php';
+    return;
+}
+
 if (count($_GET) > 0 || count($_POST) > 0) {
-    $task = new \Rustam\TodoApp\Task();
+    $task = new Task();
 
     if (isset($_POST['text'])) {
         $task->add($_POST['text']);
