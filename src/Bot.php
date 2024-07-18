@@ -53,4 +53,12 @@ class Bot
         }
     }
 
+    public function handleAllCommand(int $chatId)
+    {
+        $query = "SELECT todos.text, todos.status FROM todos
+                    JOIN todo_app.users on users.id = todos.user_id
+                    WHERE chat_id = :chatId";
+        $stmt = $this->pdo->prepare($query);
+
+    }
 }
