@@ -12,5 +12,7 @@
             "email": "rustamergashev.sp@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-pdo": "*"
+    }
 }
