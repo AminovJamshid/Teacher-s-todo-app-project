@@ -15,5 +15,8 @@
   "require": {
     "ext-pdo": "*",
     "guzzlehttp/guzzle": "^7.8"
+  },
+  "require-dev": {
+    "buggregator/trap": "^1.10"
   }
 }

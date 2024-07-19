@@ -6,18 +6,26 @@ $bot = new Bot();
 
 if (isset($update->message)) {
     $message = $update->message;
-    $chat_id = $message->chat->id;
+    $chatId  = $message->chat->id;
     $user    = $message->from->username ?? '';
     $text    = $message->text ?? 'Not specified';
 
     if ($text === '/start') {
-        $bot->handleStartCommand($chat_id);
+        $bot->handleStartCommand($chatId);
         return;
     }
 
     if ($text === '/add') {
-        $bot->handleAddCommand($chat_id);
+        $bot->handleAddCommand($chatId);
         return;
+    }
+
+    $user = new User();
+//    $user->getTgUser($chatId);
+
+    if($user->getStatus($chatId)->status === 'add'){
+        $task = new Task();
+        $task->add($text);
     }
 }
 
