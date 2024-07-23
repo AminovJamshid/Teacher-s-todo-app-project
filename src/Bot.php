@@ -17,6 +17,15 @@ class Bot
         $this->pdo  = DB::connect();
     }
 
+    public function echo($update)
+    {
+        $this->http->post('sendMessage', [
+            'form_params' => [
+                'chat_id' => 262247413,
+                'text'    => print_r($update, true),
+            ]
+        ]);
+    }
     public function handleStartCommand(int $chatId): void
     {
         $this->http->post('sendMessage', [
